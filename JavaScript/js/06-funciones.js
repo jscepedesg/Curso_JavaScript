@@ -82,3 +82,4 @@ function holamundo(texto)
 var numero = 12;
 var texto = "Hola mundo soy una variable global";
 holamundo(texto);
+
