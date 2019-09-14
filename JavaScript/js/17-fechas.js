@@ -7,3 +7,4 @@ var texto_hora = "El año es: "+ fecha.getFullYear()+" El mes es: "+ fecha.getMo
 console.log(texto_hora);
 //Funciones matematicas
 console.log(Math.ceil(Math.random()*200)-100);
+console.log(Math.ceil((Math.random()*(24))));

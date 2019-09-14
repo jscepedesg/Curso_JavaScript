@@ -1,0 +1,38 @@
+<h2>{{ titulo }}</h2>
+
+<p>Añadir marca</p>
+<p>
+    <input type="text" [(ngModel)]="mi_marca" (blur)="onBlur()"/>
+    <button (click)="getMarca()">Marca</button>
+    <button (click)="addMarca()">Añadir Marca</button>
+</p>
+<p>{{mi_marca}}</p>
+
+<p> Compra las zapatillas de las mejores marcas </p>
+  <ul>
+    <li *ngFor= "let marcas of marca; let indice = index">
+      {{indice + ' - '+marcas}}
+      <button (click)="setBorrarMarca(indice)">Borrar</button>
+    </li>
+  </ul>
+<ul>
+  <li *ngFor = "let deportivas of zapatillas">
+    {{deportivas.nombre}} -
+    <strong  [class.altoPrecio]="deportivas.precio >= 80">
+      {{deportivas.precio}}
+    </strong>
+
+    <span *ngIf= "deportivas.precio < 80"
+          [style.background]= "deportivas.precio < 80 ? 'green' : 'transparent'"
+          >¡ EN OFERTA !</span>
+  </li>
+</ul>
+
+<p>EL color de la mayoria de nuestras zapatillas es: </p>
+
+<ul [ngSwitch]="color">
+  <li *ngSwitchCase= "'yellow'">El color es el amarillo</li>
+  <li *ngSwitchCase= "'red'">El color es el rojo</li>
+  <li *ngSwitchCase= "'balck'">El color es el negro</li>
+
+</ul>
